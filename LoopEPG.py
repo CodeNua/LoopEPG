@@ -80,13 +80,14 @@ for row in EPGprog:
     Date   = DayToDate[row["Day"]]
     
     # Get the Start and End times from CSV, calculate duration
-    Start    = datetime.datetime.strptime(row["Start"],"%H%M")
-    End      = datetime.datetime.strptime(row["End"]  ,"%H%M")
+    Start    = datetime.datetime.strptime(row["Start"].zfill(4),"%H%M") # zfill with leading zeros, Excel sometimes drops these
+    End      = datetime.datetime.strptime(row["End"].zfill(4)  ,"%H%M")
     Duration = End - Start
     
     # Check if duration passes midnight, set flag if it does
     PastMidnight = 0
     if Duration < datetime.timedelta(0):
+        
         PastMidnight = 1
         Duration = Duration + datetime.timedelta(days=1)   
     
