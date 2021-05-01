@@ -5,7 +5,7 @@ Created on Thu Mar 18 12:19:43 2021
 @author: codenua
 
 LoopEPG
-Copyright (C) 2021  codeNua
+Copyright (C) 2021  CodeNua
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
